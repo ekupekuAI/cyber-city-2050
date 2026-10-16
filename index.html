@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cyber City 2050 — The Future Is Connected.</title>
+  <meta name="description" content="Activate Cyber City 2050: connect its AI, transport and energy systems to bring the city online.">
+  <meta name="theme-color" content="#F3EFE5">
+  <meta property="og:title" content="Cyber City 2050">
+  <meta property="og:description" content="The Future Is Connected.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="bar">
+    <span class="bar__mark">CC/2050</span>
+    <span class="bar__meta">Interactive poster companion</span>
+    <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false">
+      <span class="motion-toggle__box" aria-hidden="true"></span>Reduce motion
+    </button>
+  </header>
+
+  <main class="layout">
+    <section class="intro" aria-labelledby="title">
+      <p class="kicker"><span>Interactive poster</span><span>Sector 2050</span></p>
+      <h1 class="title" id="title">
+        <span class="title__line">Cyber</span>
+        <span class="title__line">City</span>
+        <span class="title__line"><span class="title__year">2050</span></span>
+      </h1>
+      <p class="tagline">The Future Is Connected.</p>
+      <p class="lede">Three systems run this city. Connect each one to the central hub and switch Cyber City on.</p>
+    </section>
+
+    <figure class="stage" id="stage">
+      <div class="stage__head" aria-hidden="true">
+        <span>Plate 01 — Axonometric</span><span>Hub 00</span>
+      </div>
+      <div class="stage__frame">
+        <svg class="city" id="city" viewBox="0 0 460 446" role="img" aria-labelledby="city-title city-desc">
+          <title id="city-title">Isometric drawing of Cyber City 2050</title>
+          <desc id="city-desc">A city block model with an AI tower district, an elevated transit line and an energy district with solar fields and turbines, each linked to a central hub.</desc>
+          <defs>
+            <pattern id="hatch" width="3.4" height="3.4" patternUnits="userSpaceOnUse">
+              <rect width="3.4" height="3.4" class="f-paper"/>
+              <path d="M0.5 0V3.4" class="hatch-line"/>
+            </pattern>
+          </defs>
+        </svg>
+        <noscript><p class="noscript">This city needs JavaScript to come online.</p></noscript>
+      </div>
+      <figcaption class="stage__caption">
+        <span>Fig. 01 — Tap a node</span>
+        <span id="fig-status">0/3 linked</span>
+      </figcaption>
+    </figure>
+
+    <section class="console" id="console" aria-labelledby="console-title">
+      <div class="console__head">
+        <h2 class="console__title" id="console-title">City systems</h2>
+        <p class="count"><span id="count">0</span><small>/3 online</small></p>
+      </div>
+      <div class="meter" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="hint">Tap a node on the map, or choose a system below.</p>
+      <ul class="systems">
+        <li>
+          <button class="system" type="button" data-node="ai" aria-pressed="false">
+            <span class="system__idx" aria-hidden="true">01</span>
+            <span class="system__body">
+              <span class="system__name">AI</span>
+              <span class="system__desc">Civic intelligence core</span>
+            </span>
+            <span class="system__state">Offline</span>
+          </button>
+        </li>
+        <li>
+          <button class="system" type="button" data-node="transport" aria-pressed="false">
+            <span class="system__idx" aria-hidden="true">02</span>
+            <span class="system__body">
+              <span class="system__name">Transport</span>
+              <span class="system__desc">Maglev transit line</span>
+            </span>
+            <span class="system__state">Offline</span>
+          </button>
+        </li>
+        <li>
+          <button class="system" type="button" data-node="energy" aria-pressed="false">
+            <span class="system__idx" aria-hidden="true">03</span>
+            <span class="system__body">
+              <span class="system__name">Energy</span>
+              <span class="system__desc">Solar, wind and storage grid</span>
+            </span>
+            <span class="system__state">Offline</span>
+          </button>
+        </li>
+      </ul>
+      <div class="actions">
+        <button class="btn" id="restart" type="button" disabled>Restart</button>
+      </div>
+    </section>
+
+    <section class="success" id="success" tabindex="-1" aria-labelledby="success-title" hidden>
+      <p class="success__kicker">3/3 systems online</p>
+      <h2 class="success__title" id="success-title">The Future Is Connected<span class="stop">.</span></h2>
+      <ul class="success__list" aria-label="System status">
+        <li>AI</li><li>Transport</li><li>Energy</li>
+      </ul>
+      <p class="success__text">AI, transport and energy now share one network. Cyber City is live.</p>
+      <button class="btn btn--signal" id="restart-success" type="button">Restart the city</button>
+    </section>
+
+    <p class="sr-only" id="announcer" aria-live="polite"></p>
+  </main>
+
+  <footer class="foot">
+    <span>Cyber City 2050</span>
+    <span>Runs entirely in your browser. No login, no tracking.</span>
+  </footer>
+</body>
+</html>
